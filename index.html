@@ -39,9 +39,7 @@
           class="navbar m-auto flex flex-col md:flex-row justify-between items-center md:w-10/12"
         >
           <div class="navbar-start ml-24 md:ml-0 mb-4 md:mb-0 md:mx-auto">
-            <button class="px-8 py-3 bg-green-300 rounded-md font-bold">
-              Blog
-            </button>
+            <a href="blog.html"><button class="px-8 py-3 bg-green-300 rounded-md font-bold">Blog</button></a>
           </div>
           <div class="navbar-center gap-1 flex items-center">
             <img src="assets/logo.png" alt="" />
@@ -60,16 +58,22 @@
       <div
         class="flex flex-col md:flex-row gap-2 mt-10 mb-10 items-center justify-center"
       >
-        <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-green-400">
+        <button
+          id="donation-btn"
+          class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-green-400"
+        >
           Donation
         </button>
-        <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
+        <button
+          id="history-btn"
+          class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+        >
           History
         </button>
       </div>
       <!-- button section end -->
       <!-- card section start -->
-      <div>
+      <div id="donation-section">
         <!-- card- 1 -->
         <div class="hero bg-base-200 mb-5">
           <div class="hero-content mx-auto flex-col md:flex-row">
@@ -93,16 +97,77 @@
                 supporting the relief efforts and making a positive impact on
                 the lives of those in need.
               </p>
-              <input id="input-field-noa"
+              <input
+                id="input-field-noa"
                 class="p-2 rounded-sm mb-3 w-full md:w-9/12"
                 type="number"
                 placeholder="Write Donation Amount"
               />
-              <div id="donation-modal">
-                <p class="border-8 bg-gray-600 text-yellow-400 font-semibold text-center rounded-md px-2 py-2 hidden">Your contribution makes a difference!</p>
-              </div>
+              <section>
+                <dialog class="modal" id="show-modal">
+                  <div class="modal-box">
+                    <div role="alert" class="alert alert-success">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 shrink-0 stroke-current"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                      <span class="text-white font-bold"
+                        >Successfully Donated</span
+                      >
+                    </div>
+
+                    <div class="modal-action">
+                      <form method="dialog">
+                        <button class="btn btn-outline btn-success">
+                          Close
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </dialog>
+                <dialog class="modal" id="show-modal-error">
+                  <div class="modal-box">
+                    <div role="alert" class="alert alert-error">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 shrink-0 stroke-current"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                      <span class="text-white font-bold">Invalid Donation</span>
+                    </div>
+
+                    <div class="modal-action">
+                      <form method="dialog">
+                        <button class="btn btn-outline btn-success">
+                          Close
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </dialog>
+              </section>
               <div>
-                <button id="noa-donate-btn" class="btn bg-green-400 font-bold w-full md:w-9/12">
+                <button
+                  id="noa-donate-btn"
+                  class="btn bg-green-400 font-bold w-full md:w-9/12"
+                >
                   Donate Now
                 </button>
               </div>
@@ -134,13 +199,77 @@
                 towards making a real difference. Please consider donating today
                 to assist those in urgent need.
               </p>
-              <input id="input-field-feni"
+              <input
+                id="input-field-feni"
                 class="p-2 rounded-sm mb-3 w-full md:w-9/12"
                 type="number"
                 placeholder="Write Donation Amount"
               />
+              <section>
+                <dialog class="modal" id="show-modal">
+                  <div class="modal-box">
+                    <div role="alert" class="alert alert-success">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 shrink-0 stroke-current"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                      <span class="text-white font-bold"
+                        >Successfully Donated</span
+                      >
+                    </div>
+
+                    <div class="modal-action">
+                      <form method="dialog">
+                        <button class="btn btn-outline btn-success">
+                          Close
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </dialog>
+                <dialog class="modal" id="show-modal-error">
+                  <div class="modal-box">
+                    <div role="alert" class="alert alert-error">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 shrink-0 stroke-current"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                      <span class="text-white font-bold">Invalid Donation</span>
+                    </div>
+
+                    <div class="modal-action">
+                      <form method="dialog">
+                        <button class="btn btn-outline btn-success">
+                          Close
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </dialog>
+              </section>
               <div>
-                <button id="feni-donate-btn" class="btn bg-green-400 font-bold w-full md:w-9/12">
+                <button
+                  id="feni-donate-btn"
+                  class="btn bg-green-400 font-bold w-full md:w-9/12"
+                >
                   Donate Now
                 </button>
               </div>
@@ -173,13 +302,77 @@
                 recovery. Please consider making a donation to support these
                 brave individuals in their time of need.
               </p>
-              <input id="input-field-quota"
+              <input
+                id="input-field-quota"
                 class="p-2 rounded-sm mb-3 w-full md:w-9/12"
                 type="number"
                 placeholder="Write Donation Amount"
               />
+              <section>
+                <dialog class="modal" id="show-modal">
+                  <div class="modal-box">
+                    <div role="alert" class="alert alert-success">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 shrink-0 stroke-current"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                      <span class="text-white font-bold"
+                        >Successfully Donated</span
+                      >
+                    </div>
+
+                    <div class="modal-action">
+                      <form method="dialog">
+                        <button class="btn btn-outline btn-success">
+                          Close
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </dialog>
+                <dialog class="modal" id="show-modal-error">
+                  <div class="modal-box">
+                    <div role="alert" class="alert alert-error">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 shrink-0 stroke-current"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                      <span class="text-white font-bold">Invalid Donation</span>
+                    </div>
+
+                    <div class="modal-action">
+                      <form method="dialog">
+                        <button class="btn btn-outline btn-success">
+                          Close
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </dialog>
+              </section>
               <div>
-                <button id="quota-donate-btn" class="btn bg-green-400 font-bold w-full md:w-9/12">
+                <button
+                  id="quota-donate-btn"
+                  class="btn bg-green-400 font-bold w-full md:w-9/12"
+                >
                   Donate Now
                 </button>
               </div>
@@ -188,16 +381,18 @@
         </div>
       </div>
       <!-- card section end -->
+
       <!-- history section start-->
-      <div>
-        <p class="text-center font-bold text-5xl hidden">
-          This is history section
-        </p>
+      <div id="history-section" class="hidden">
+        <p class="text-center font-bold text-2xl">History List</p>
+        <div id="history-item" class="grid grid-cols-1 gap-2">
+
+        </div>
       </div>
 
       <!-- history section end-->
     </main>
     <script src="JS/donate.js"></script>
-<script src="JS/utilities.js"></script>
+    <script src="JS/utilities.js"></script>
   </body>
 </html>

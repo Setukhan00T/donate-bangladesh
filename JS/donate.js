@@ -7,7 +7,7 @@ document
     const mainValue = getTextValueById("main-balance");
     const noakhaliDonation = getTextValueById("donate-noakhali");
 
-    if (inputValue <= mainValue && inputValue > 0) {
+    if (inputValue && inputValue <= mainValue && inputValue > 0) {
       const updatedBalance = mainValue - inputValue;
       const donateNoakhali = inputValue + noakhaliDonation;
 
@@ -17,18 +17,19 @@ document
         updatedBalance.toFixed(2);
       const modal = document.getElementById("show-modal");
       modal.showModal();
+      document.getElementById("input-field-noa").value = "";
+      const historyItem = document.createElement("div");
+      historyItem.className = "bg-gray-200 p-9 rounded-md";
+      historyItem.innerHTML = `
+    <p class="text-gray-600 font-bold">${inputValue} Taka is Donated for famine-2024 at Noakhali, Bangladesh.</p>
+    <p> ${new Date().toLocaleString()}</p>
+      `;
+      const historyContainer = document.getElementById("history-item");
+      historyContainer.insertBefore(historyItem, historyContainer.firstChild);
     } else {
       const modal = document.getElementById("show-modal-error");
       modal.showModal();
     }
-    const historyItem = document.createElement("div");
-    historyItem.className = "bg-gray-200 p-9 rounded-md";
-    historyItem.innerHTML = `
-    <p class="text-gray-600 font-bold">${inputValue} Taka is Donated for famine-2024 at Noakhali, Bangladesh.</p>
-    <p> ${new Date().toLocaleDateString()}</p>
-      `;
-    const historyContainer = document.getElementById("history-item");
-    historyContainer.insertBefore(historyItem, historyContainer.firstChild);
   });
 
 // feni donation
@@ -50,18 +51,19 @@ document
         updatedBalance.toFixed(2);
       const modal = document.getElementById("show-modal");
       modal.showModal();
+      document.getElementById("input-field-feni").value = "";
+      const historyItem = document.createElement("div");
+      historyItem.className = "bg-gray-200 p-9 rounded-md";
+      historyItem.innerHTML = `
+    <p class="text-gray-600 font-bold">${inputValue} Taka is Donated for famine-2024 at Feni, Bangladesh.</p>
+    <p> ${new Date().toLocaleString()}</p>
+      `;
+      const historyContainer = document.getElementById("history-item");
+      historyContainer.insertBefore(historyItem, historyContainer.firstChild);
     } else {
       const modal = document.getElementById("show-modal-error");
       modal.showModal();
     }
-    const historyItem = document.createElement("div");
-    historyItem.className = "bg-gray-200 p-9 rounded-md";
-    historyItem.innerHTML = `
-    <p class="text-gray-600 font-bold">${inputValue} Taka is Donated for famine-2024 at Feni, Bangladesh.</p>
-    <p> ${new Date().toLocaleDateString()}</p>
-      `;
-    const historyContainer = document.getElementById("history-item");
-    historyContainer.insertBefore(historyItem, historyContainer.firstChild);
   });
 // Quota donation
 document
@@ -82,18 +84,19 @@ document
         updatedBalance.toFixed(2);
       const modal = document.getElementById("show-modal");
       modal.showModal();
+      document.getElementById('input-field-quota').value="";
+      const historyItem = document.createElement("div");
+      historyItem.className = "bg-gray-200 p-9 rounded-md";
+      historyItem.innerHTML = `
+    <p class="text-gray-600 font-bold">${inputValue} Taka is Donated for Quota-2024 at Dhaka, Bangladesh.</p>
+    <p> ${new Date().toLocaleString()}</p>
+      `;
+      const historyContainer = document.getElementById("history-item");
+      historyContainer.insertBefore(historyItem, historyContainer.firstChild);
     } else {
       const modal = document.getElementById("show-modal-error");
       modal.showModal();
     }
-    const historyItem = document.createElement("div");
-    historyItem.className = "bg-gray-200 p-9 rounded-md";
-    historyItem.innerHTML = `
-    <p class="text-gray-600 font-bold">${inputValue} Taka is Donated for Quota-2024 at Dhaka, Bangladesh.</p>
-    <p> ${new Date().toLocaleDateString()}</p>
-      `;
-    const historyContainer = document.getElementById("history-item");
-    historyContainer.insertBefore(historyItem, historyContainer.firstChild);
   });
 
 //   history button
